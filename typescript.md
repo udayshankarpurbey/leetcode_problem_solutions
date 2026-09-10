@@ -447,3 +447,64 @@ function sortColors(nums: number[]): void {
 
 };
 ```
+
+
+### 3870. Count Commas in Range
+
+```ts
+function countCommas(n: number): number {
+    if(n<999) return 0;
+    return n-999;
+};
+```
+
+### 3871. Count Commas in Range II
+
+```ts
+function countCommas(n: number): number {
+    if (n < 999) return 0;
+    let commaCount = 0;
+
+    if (n >= 999999999999999) {
+        commaCount = commaCount + 5 * (n - 999999999999999);
+        n = 999999999999999;
+    }
+
+
+    if (n >= 999999999999) {
+        commaCount = commaCount + 4 * (n - 999999999999);
+        n = 999999999999;
+    }
+
+    if (n >= 999999999) {
+        commaCount = commaCount + 3 * (n - 999999999);
+        n = 999999999;
+    }
+
+    if (n >= 999999) {
+        commaCount = commaCount + 2 * (n - 999999);
+        n = 999999;
+    }
+
+    if (n >= 999) {
+        commaCount = commaCount + 1 * (n - 999);
+        n = 999;
+    }
+
+    return commaCount;
+};
+```
+
+### 231. Power of Two
+
+```ts
+function isPowerOfTwo(n: number): boolean {
+    if(n <= 0) return false;
+    if(n=== 1) return true;
+    
+    for(let i = 1; i<n; i++) {
+        if(Math.pow(2 , i) === n) return true;
+        if(Math.pow(2 , i) > n) return false;
+    }    
+};
+```
