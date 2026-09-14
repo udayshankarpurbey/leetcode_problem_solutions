@@ -590,3 +590,12 @@ select * ,case when x+y > z and x+z > y and z+y > x then 'Yes' else 'No' end tri
 ```sql 
 select product_id  from Products where low_fats = 'Y' and recyclable = 'Y'
 ```
+
+### 1978. Employees Whose Manager Left the Company
+
+```sql
+select e.employee_id from employees e
+left join employees m on e.manager_id  = m.employee_id 
+where e.salary < 30000 and e.manager_id is not null and m.employee_id  is null
+order by e.employee_id;
+```
