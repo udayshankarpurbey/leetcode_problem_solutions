@@ -585,3 +585,25 @@ class MinStack {
  * var param_4 = obj.getMin()
  */
 ```
+
+### 69. Sqrt(x)
+
+```ts
+function mySqrt(x: number): number {
+    if (x === 0) return 0;
+    if (x <= 3) return 1;
+
+    let num = 1;
+
+    for (let i = 2; i <= x; i++) {
+        // If (x / i) / i is less than 1, it means i * i > x
+        if (((x / i) / i) < 1) {
+            return num; // Return the last valid 'i' stored in num
+        }
+        
+        num = i; // Update the closest valid integer square root
+    }
+    
+    return num;
+}
+```
