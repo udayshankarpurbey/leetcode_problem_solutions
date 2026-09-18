@@ -32,7 +32,7 @@ Contains curated company-wise LeetCode interview questions and preparation mater
 Since this repository uses Git submodules, clone it using:
 
 ```bash
-git clone --recurse-submodules https://github.com/UdayShankarPurbey/leetcode_problem_solutions.git
+git clone --recurse-submodules https://github.com/udayshankarpurbey/leetcode_problem_solutions.git
 ```
 
 ## 🔄 Existing Clone?
