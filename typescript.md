@@ -628,3 +628,16 @@ function mostCommonWord(paragraph: string, banned: string[]): string {
     return [...wordWithOccurancesount.entries()].sort((a, b) => b[1] - a[1])[0][0];
 };
 ```
+
+### 
+
+```ts
+function isStrictlyPalindromic(n: number): boolean {
+    for(let i = 2; i<=(n - 2); i++) {
+        if(n.toString(i) !== n.toString(i).split('').reverse().join('')) {
+            return false;
+        }
+    }    
+    return true;
+};
+```
