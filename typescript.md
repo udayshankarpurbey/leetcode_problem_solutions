@@ -629,7 +629,7 @@ function mostCommonWord(paragraph: string, banned: string[]): string {
 };
 ```
 
-### 
+### 2396. Strictly Palindromic Number
 
 ```ts
 function isStrictlyPalindromic(n: number): boolean {
