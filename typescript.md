@@ -641,3 +641,15 @@ function isStrictlyPalindromic(n: number): boolean {
     return true;
 };
 ```
+
+### 3498. Reverse Degree of a String
+
+```ts 
+function reverseDegree(s: string): number {
+    let sum = 0;
+    for (let i = 0 ; i<s.length; i++) {
+        sum += (123 - s[i].charCodeAt(0)) * (i + 1);
+    }
+    return sum;
+};
+```
