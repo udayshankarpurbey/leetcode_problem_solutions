@@ -104,9 +104,3 @@ var findMedianSortedArrays = function(nums1, nums2) {
     return median;
 };
 ```
-
-```sqk
-select distinct author_id as id from Views
-where author_id = viewer_id
-order by id
-```

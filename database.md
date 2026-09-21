@@ -599,3 +599,11 @@ left join employees m on e.manager_id  = m.employee_id
 where e.salary < 30000 and e.manager_id is not null and m.employee_id  is null
 order by e.employee_id;
 ```
+
+### 1148. Article Views I
+
+```sql
+select distinct author_id as id from Views
+where author_id = viewer_id
+order by id
+```
