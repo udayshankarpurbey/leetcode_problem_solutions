@@ -794,3 +794,16 @@ function lowerCharWithValue() : object {
     return obj;
 }
 ```
+
+### 1807. Evaluate the Bracket Pairs of a String
+
+```ts
+
+function evaluate(s: string, knowledge: string[][]): string {
+    const knowledgeBank = Object.fromEntries(knowledge);   
+
+    return s.replaceAll(/\(([a-zA-Z]+)\)/g, (match, key) => {
+        return knowledgeBank[key] ?? "?";
+    }) 
+};
+```
