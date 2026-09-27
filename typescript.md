@@ -807,3 +807,22 @@ function evaluate(s: string, knowledge: string[][]): string {
     }) 
 };
 ```
+
+### 389. Find the Difference
+
+```ts
+function findTheDifference(s: string, t: string): string {
+    let diff  = Array(26).fill(0);
+    for(let i = 0; i<s.length; i++) {
+        diff[ s[i].charCodeAt(0) - 97] += 1
+        diff[ t[i].charCodeAt(0) - 97] -= 1
+    }
+
+    diff[t[t.length - 1].charCodeAt(0) - 97] -= 1;
+
+    for(let i = 0 ; i<diff.length ; i++) {
+        if(diff[i] !== 0) return String.fromCharCode(97+i)
+    }
+    return ''
+};
+```
