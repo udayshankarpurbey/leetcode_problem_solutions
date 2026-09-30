@@ -607,3 +607,25 @@ select distinct author_id as id from Views
 where author_id = viewer_id
 order by id
 ```
+
+### 3570. Find Books with No Available Copies
+
+```sql
+WITH book AS (
+    SELECT book_id, COUNT(*) AS borrowed_copies  
+    FROM borrowing_records
+    WHERE return_date IS NULL
+    GROUP BY book_id 
+)
+SELECT 
+    l.book_id,
+    l.title,
+    l.author,
+    l.genre,
+    l.publication_year,
+    l.total_copies AS current_borrowers  
+FROM library_books l
+INNER JOIN book b ON b.book_id = l.book_id
+WHERE b.borrowed_copies = l.total_copies
+ORDER BY current_borrowers DESC, l.title ASC;
+```
