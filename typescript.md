@@ -870,3 +870,24 @@ function buildArray(target: number[], n: number): string[] {
     return stackOperation;    
 };
 ```
+
+### 387. First Unique Character in a String
+
+```ts
+function firstUniqChar(s: string): number {
+    const charWithIndex = new Map();
+
+    for(let i = 0 ;i <s.length; i++) {
+        if(charWithIndex.has(s[i])) {
+            charWithIndex.set(s[i] , null)
+        } else {
+            charWithIndex.set(s[i] , i)
+        }
+    }
+
+    const firstEntry = [...charWithIndex].find(([char, index]) => index !== null);
+
+    return firstEntry ? firstEntry[1] : -1;
+    
+};
+```
