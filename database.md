@@ -629,3 +629,19 @@ INNER JOIN book b ON b.book_id = l.book_id
 WHERE b.borrowed_copies = l.total_copies
 ORDER BY current_borrowers DESC, l.title ASC;
 ```
+
+### 1873. Calculate Special Bonus
+
+```sql
+SELECT 
+    employee_id,
+        CASE
+                WHEN employee_id % 2 = 1
+                             AND name NOT LIKE 'M%'
+                                     THEN salary
+                                             ELSE 0
+                                                 END AS bonus
+                                                 FROM Employees
+                                                 ORDER BY employee_id;
+
+```
