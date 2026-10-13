@@ -713,3 +713,13 @@ LEFT JOIN UnitsSold u
     AND u.purchase_date BETWEEN p.start_date AND p.end_date
 GROUP BY p.product_id;
 ```
+
+### 178. Rank Scores
+
+```sql
+SELECT
+    score,
+    DENSE_RANK() OVER (ORDER BY score DESC) AS `rank`
+FROM Scores
+ORDER BY score DESC;
+```
