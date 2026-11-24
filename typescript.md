@@ -1048,3 +1048,22 @@ function maximumWealth(accounts: number[][]): number {
     return maxWealth;
 };
 ```
+
+### 2124. Check if All A's Appears Before All B's
+
+```ts
+function checkString(s: string): boolean {
+    let position = 0;
+
+    for(let i = 0 ; i<s.length;i++) {
+        if(s[i]=='a' && position != 0) return false;
+
+        if(s[i] == 'b') {
+            position = i + 1;
+        } 
+
+    }
+    return true;
+    
+};
+```
